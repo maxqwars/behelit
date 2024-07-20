@@ -1,0 +1,39 @@
+{
+  "name": "@maxqwars/behelit",
+  "version": "0.0.1",
+  "description": "Command line utils collection for Search & Analize vkontakte",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "npx eslint src scripts",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src scripts --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "clean": "rimraf release/",
+    "build": "npm run clean && cross-env NODE_ENV=production rollup -c",
+    "dev": "npm run clean && cross-env NODE_ENV=development rollup -w -c"
+  },
+  "author": "Maxim \"maxqwars\" Maximenko <maxqwars@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.6.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.14.10",
+    "@types/node-xlsx": "^0.21.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "globals": "^15.8.0",
+    "prettier": "3.3.2",
+    "rimraf": "^5.0.8",
+    "rollup": "^4.18.0",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.15.0"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.12",
+    "vk-io": "^4.9.1"
+  }
+}
